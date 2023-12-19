@@ -56,7 +56,7 @@ resource "volterra_aws_vpc_site" "site" {
 }
 
 resource "volterra_tf_params_action" "apply_aws_vpc" {
-  site_name        = volterra_aws_vpc_site.site.name
+  site_name        = volterra_aws_vpc_site.site[0].name
   site_kind        = "aws_vpc_site"
   action           = "apply"
   wait_for_action  = true
