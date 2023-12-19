@@ -16,4 +16,5 @@ locals {
   vnet_name           = try(data.tfe_outputs.infra.values.vnet_name, "")
   subnet_name         = try(data.tfe_outputs.infra.values.subnet_name, "")
   subnet_id           = try(data.tfe_outputs.infra.values.subnet_id, "")
+  aws_region          = try(data.tfe_outputs.infra.values.aws_region)
 }
