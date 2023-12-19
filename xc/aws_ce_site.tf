@@ -12,7 +12,7 @@ variable "aws_az" {
   default = "ap-south-1a"
 }
 
-
+/*
 resource "volterra_cloud_credentials" "aws_cred" {
   name      = format("%s-cred", var.site_name)
   namespace = "system"
@@ -25,8 +25,10 @@ resource "volterra_cloud_credentials" "aws_cred" {
     }
   }
 }
+*/
 
 resource "volterra_aws_vpc_site" "site" {
+  count      = var.aws_ce_site ? 1 : 0
   name       = var.site_name
   namespace  = "system"
   aws_region = local.aws_region

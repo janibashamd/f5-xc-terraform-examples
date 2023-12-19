@@ -114,12 +114,19 @@ variable "site_name" {
   default     = ""
 }
 
-# Azure CE Site 
+# CE Site
 variable "az_ce_site" {
   type        = string
   description = "Deploy Azure CE site"
   default     = "false"
 }
+
+variable "aws_ce_site" {
+  type        = string
+  description = "Deploy AWS CE site"
+  default     = "false"
+}
+
 
 variable "azure_subscription_id" {
   type    = string

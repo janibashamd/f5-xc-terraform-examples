@@ -9,7 +9,7 @@ xc_waf_blocking = "true"
 k8s_pool = "true"
 serviceName = "productpage.default"
 serviceport = "9080"
-site_name = "janibasha-site"
+site_name = "janibasha-aws-site"
 advertise_sites = "true"
 http_only = "true"
 
