@@ -2,11 +2,11 @@
 api_url = "https://treino.console.ves.volterra.io/api"
 xc_tenant = "treino-ufahspac"
 xc_namespace = "default"
-app_domain = "gcplb.f5-hyd-demo.com"
+app_domain = "awslb.f5-hyd-demo.com"
 xc_waf_blocking = "true"
 
 # k8s configs
-k8s_pool = "false"
+k8s_pool = "true"
 serviceName = "productpage.default"
 serviceport = "9080"
 site_name = "janibasha-site"
@@ -32,8 +32,8 @@ xc_ddos_pro = false
 xc_mud = false
 
 # CE configs
-gcp_ce_site = "true"
-
+gcp_ce_site = "false"
+aws_ce_site = "true"
 
 azure_subscription_id = ""
 azure_subscription_tenant_id = ""
