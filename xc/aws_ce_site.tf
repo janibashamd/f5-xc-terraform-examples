@@ -44,7 +44,7 @@ resource "volterra_aws_vpc_site" "site" {
   ingress_gw {
     aws_certified_hw = "aws-byol-voltmesh"
     az_nodes {
-      aws_az_name = local.azs
+      aws_az_name = local.azs[0]
       disk_size   = 20
       local_subnet {
         existing_subnet_id = local.public_subnet_ids[0]
