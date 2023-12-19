@@ -1,4 +1,4 @@
-
+/*
 variable "aws_access_key" {
     default     = "jani-key"
 }
@@ -12,7 +12,7 @@ variable "aws_az" {
   default = "ap-south-1a"
 }
 
-/*
+
 resource "volterra_cloud_credentials" "aws_cred" {
   name      = format("%s-cred", var.site_name)
   namespace = "system"
@@ -39,15 +39,15 @@ resource "volterra_aws_vpc_site" "site" {
   }
   instance_type = "t3.xlarge"
   vpc {
-    vpc_id=local.vnet_name
+    vpc_id=local.vpc_id
   }
   ingress_gw {
     aws_certified_hw = "aws-byol-voltmesh"
     az_nodes {
-      aws_az_name = var.aws_az
+      aws_az_name = var.azs
       disk_size   = 20
       local_subnet {
-        existing_subnet_id = local.subnet_id
+        existing_subnet_id = local.public_subnet_ids[0]
       }
     }
   }
