@@ -1,13 +1,3 @@
-terraform {
-  required_version = ">= 0.13.1"
-
-  required_providers {
-    volterra = {
-      source = "volterraedge/volterra"
-    }
-  }
-}
-
 
 variable "aws_access_key" {
     default     = "jani-key"
