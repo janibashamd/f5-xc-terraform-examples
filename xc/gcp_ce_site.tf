@@ -7,7 +7,7 @@ resource "volterra_gcp_vpc_site" "site" {
   name                   = var.site_name
   namespace              = "system"
   cloud_credentials {
-    name                 = "gcp-salini-new
+    name                 = "gcp-salini-new"
     namespace            = "system"
   }
   ssh_key                = var.ssh_key
