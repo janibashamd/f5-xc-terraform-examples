@@ -1,9 +1,9 @@
 #Global
-project_prefix = "prefix"
+project_prefix = "jani-waf-gcp"
 
 # INFRA
 gcp_region = "asia-south1"
-gcp_project_id = "project-id"
+gcp_project_id = "f5-gcs-5611-mktg-secsols"
 
 #Assets
 nic = false
