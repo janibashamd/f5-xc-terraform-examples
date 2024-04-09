@@ -2,6 +2,7 @@ variable "gcp_instance_type" {
   default = "n1-standard-4"
 }
 
+/*
 resource "volterra_cloud_credentials" "gcp_cred" {
   count     = var.gcp_ce_site ? 1 : 0
   name      = "${local.project_prefix}-gcp-credentials"
@@ -14,13 +15,14 @@ resource "volterra_cloud_credentials" "gcp_cred" {
     }
   }
 }
+*/
 
 resource "volterra_gcp_vpc_site" "site" {
   count     = var.gcp_ce_site ? 1 : 0
   name                   = var.site_name
   namespace              = "system"
   cloud_credentials {
-    name                 = volterra_cloud_credentials.gcp_cred[0].name
+    name                 = "gcp-salini-new
     namespace            = "system"
   }
   ssh_key                = var.ssh_key
