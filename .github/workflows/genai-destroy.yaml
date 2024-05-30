@@ -202,6 +202,7 @@ jobs:
     name: "Destroy Gen AI Frontend"
     runs-on: ubuntu-latest
     needs: gke_ce
+    continue-on-error: true
     defaults:
       run:
         working-directory: ./shared/genai/llm-frontend
@@ -277,6 +278,7 @@ jobs:
     name: "Destroy GCP GKE"
     runs-on: ubuntu-latest
     needs: gcp_genai
+    continue-on-error: true
     defaults:
       run:
         working-directory: ./gcp/gke-cluster
