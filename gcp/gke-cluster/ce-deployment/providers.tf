@@ -5,6 +5,7 @@ provider "google" {
 
 provider "kubectl" {
     host                    = local.host
+    apply_retry_count      = 5
     cluster_ca_certificate  = base64decode(local.cluster_ca_certificate)
     token                   = local.cluster_token
     load_config_file        = false
