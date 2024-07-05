@@ -5,7 +5,9 @@ on:
     branches:
       - bot-defense-re
   pull_request:
-
+  schedule:
+    - cron: '0 12 * * 6'
+    
 jobs:
   terraform_xc_lb:
     name: "Deploy F5 XC Bot Defense"
