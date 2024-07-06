@@ -25,7 +25,6 @@ jobs:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: Pull latest code
-        id: Latest code
         run: |
           git fetch upstream
           git merge upstream
