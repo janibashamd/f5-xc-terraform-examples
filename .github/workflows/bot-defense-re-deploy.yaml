@@ -28,7 +28,7 @@ jobs:
         run: |
           git remote add upstream https://github.com/f5devcentral/f5-xc-terraform-examples.git
           git fetch upstream 
-          git merge upstream/main
+          git merge upstream/main --allow-unrelated-histories
           
 
       - name: Setup Terraform Backend
