@@ -5,7 +5,9 @@ on:
     branches:
       - destroy-bot-defense-re
   pull_request:
-
+  schedule:
+    - cron: '0 14 * * 6/2'
+    
 jobs:
   terraform_xc:
     name: "Destroy F5 XC Infra"
