@@ -6,8 +6,6 @@ on:
       - bot-defense-re
   pull_request:
   workflow_dispatch:
-  schedule:
-    - cron: '0 12 * * 0'
     
 jobs:
   terraform_xc_lb:
