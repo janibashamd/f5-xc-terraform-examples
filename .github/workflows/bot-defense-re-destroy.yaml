@@ -5,8 +5,7 @@ on:
     branches:
       - destroy-bot-defense-re
   pull_request:
-  schedule:
-    - cron: '0 14 * * 6/2'
+  workflow_dispatch:
     
 jobs:
   terraform_xc:
