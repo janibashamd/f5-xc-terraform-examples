@@ -22,6 +22,10 @@ output "vpc_subnet" {
 	value = google_compute_subnetwork.public_subnetwork.name
 }
 
+output "service_account" {
+	value = var.service_account
+}
+
 output "nap" {
   value = var.nap
 }
