@@ -378,7 +378,7 @@ jobs:
   ansible_bigip:
     name: "Configure BIGIP"
     runs-on: ubuntu-latest
-    needs: [terraform_app, terraform_bot]
+    needs: [terraform_app, terraform_bigip, terraform_bot]
     defaults:
       run:
         working-directory: ./gcp/bigip
