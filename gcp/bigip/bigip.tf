@@ -1,9 +1,11 @@
-module "bigip-module_example_bigip_gcp_1nic_deploy" {
-  source            = "F5Networks/bigip-module/gcp//examples/bigip_gcp_1nic_deploy"
-  version           = "1.1.19"
-  # insert the 4 required variables here
-  image             = ""
-  project_id        = local.project_id
-  region            = local.region
-  service_account   = local.service_account
+module bigip {
+  count           = 1
+  source          = "F5Networks/bigip-module/gcp"
+  prefix          = local.project_prefix
+  project_id      = local.project_id
+  zone            = local.region
+  image           = var.image
+  service_account = local.service_account
+  #f5_password     = var.bigip_password
+  mgmt_subnet_ids = [{ "subnet_id" = local.subnet_name, "public_ip" = true, "private_ip_primary" = "" }]
 }
