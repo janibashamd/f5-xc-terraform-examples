@@ -3,7 +3,7 @@ data "tfe_outputs" "infra" {
   workspace       = "gcp-infra"
 }
 
-data "tfe_outputs" "eks" {
+data "tfe_outputs" "gke" {
   organization    = var.tf_cloud_organization
   workspace       = "gke"
 }
