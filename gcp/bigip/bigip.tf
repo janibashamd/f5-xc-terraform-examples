@@ -7,5 +7,5 @@ module bigip {
   image           = var.image
   service_account = local.service_account
   #f5_password     = var.bigip_password
-  mgmt_subnet_ids = [{ "subnet_id" = local.subnet_name, "public_ip" = true, "private_ip_primary" = "" }]
+  mgmt_subnet_ids = [{ "subnet_id" = local.subnet_id, "public_ip" = true, "private_ip_primary" = "" }]
 }
