@@ -9,7 +9,7 @@ module bigip {
   f5_password     = var.bigip_password
   vm_name         = "${local.project_prefix}-bigip"
   network_tags    = ["bigip"]
-  mgmt_subnet_ids = [{ "subnet_id" = "projects/f5-gcs-5611-mktg-secsols/regions/asia-south1/subnetworks/jani-bd-subnet-ba9f", "public_ip" = true, "private_ip_primary" = "" }]
+  mgmt_subnet_ids = [{ "subnet_id" = local.subnet_id, "public_ip" = true, "private_ip_primary" = "" }]
 }
 
 # firewall rules
