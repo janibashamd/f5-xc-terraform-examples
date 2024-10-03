@@ -3,7 +3,7 @@ module bigip {
   source          = "F5Networks/bigip-module/gcp"
   prefix          = local.project_prefix
   project_id      = local.project_id
-  zone            = local.region
+  zone            = "${local.region}-a"
   image           = var.image
   service_account = local.service_account
   f5_password     = var.bigip_password
