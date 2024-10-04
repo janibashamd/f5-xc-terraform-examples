@@ -10,7 +10,7 @@ module bigip {
   vm_name         = "${local.project_prefix}-bigip"
   network_tags    = ["bigip"]
   f5_ssh_publickey= "./id_rsa.pub"
-  mgmt_subnet_ids = [{ "subnet_id" = "${local.subnet_id}", "public_ip" = true, "private_ip_primary" = "" }]
+  mgmt_subnet_ids = { "subnet_id" = local.subnet_id, "public_ip" = true, "private_ip_primary" = "" }
 }
 
 # firewall rules
