@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform_bigip:
-    name: "Deploy BIGIP"
+    name: "Destroy BIGIP"
     runs-on: ubuntu-latest
     defaults:
       run:
