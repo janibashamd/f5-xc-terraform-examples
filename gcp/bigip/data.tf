@@ -5,5 +5,5 @@ data "tfe_outputs" "gcp-infra" {
 
 data "tfe_outputs" "f5-air" {
   organization    = var.tf_cloud_organization
-  workspace       = "f5-air"
+  workspace       = "f5air"
 }
