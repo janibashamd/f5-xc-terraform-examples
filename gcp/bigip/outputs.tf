@@ -22,3 +22,8 @@ output "bigip_public_addresses" {
   value       = nonsensitive(module.bigip.*.public_addresses)
   description = "BIGIP public addresses"
 }
+
+output "app_ip" {
+  value       = local.app_ip
+  description = "App load balancer external IP address."
+}

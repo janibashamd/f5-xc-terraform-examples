@@ -1,3 +1,3 @@
-#output "app_service_ip" {
-#  value = data.kubernetes_service.app.spec
-#}
+output "app_ip" {
+  value = local.lb_ip
+}

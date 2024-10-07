@@ -68,10 +68,3 @@ spec:
   sessionAffinity: None
 YAML
 }
-#
-#data "kubernetes_service" "app" {
-#    depends_on = [kubectl_manifest.app-service]
-#    metadata {
-#        name = "airline-flask"
-#  }
-#}
