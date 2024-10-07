@@ -26,6 +26,10 @@ output "vpc_subnet_id" {
 	value = google_compute_subnetwork.public_subnetwork.id
 }
 
+output "cidr" {
+	value = var.cidr
+}
+
 output "service_account" {
 	value = var.service_account
 }

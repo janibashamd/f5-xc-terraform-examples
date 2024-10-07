@@ -152,7 +152,7 @@ jobs:
         run: exit 1
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/deploy-bot-defense-gcp2' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/deploy-bot-defense-gcp' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
 
   terraform_app:
@@ -225,7 +225,7 @@ jobs:
         run: exit 1
 
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/deploy-bot-defense-gcp2' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/deploy-bot-defense-gcp' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
 
   terraform_bigip:

@@ -64,6 +64,7 @@ spec:
   selector:
     app: airline-flask
   type: LoadBalancer
+  loadBalancerIP: "${local.lb_ip}"
   sessionAffinity: None
 YAML
 }
