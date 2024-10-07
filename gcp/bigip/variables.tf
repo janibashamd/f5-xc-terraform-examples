@@ -13,5 +13,5 @@ variable "image" {
 variable "bigip_password" {
   type        = string
   description = "BIGIP instance password"
-  default     = "Admin@12345"
+  default     = "ApiSecurity@12345"
 }
