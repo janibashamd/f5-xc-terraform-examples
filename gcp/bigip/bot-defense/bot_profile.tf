@@ -1,27 +1,28 @@
 provider "bigip" {
-    address = local.bigip_ip
+    address  = local.bigip_ip
     username = "admin"
     password = local.bigip_password
+    port     = "8443"
 }
 
 resource "bigip_ltm_monitor" "monitor" {
   name   = "/Common/terraform_monitor"
   parent = "/Common/http"
 }
-
-resource "bigip_ltm_node" "node" {
-  name             = "/Common/terraform_node1"
-  address          = "${local.app_ip}"
-  connection_limit = "0"
-  dynamic_ratio    = "1"
-  monitor          = "/Common/icmp"
-  description      = "Test-Node"
-  rate_limit       = "disabled"
-  fqdn {
-    address_family = "ipv4"
-    interval       = "3000"
-  }
-}
+#
+#resource "bigip_ltm_node" "node" {
+#  name             = "/Common/terraform_node1"
+#  address          = "${local.app_ip}"
+#  connection_limit = "0"
+#  dynamic_ratio    = "1"
+#  monitor          = "/Common/icmp"
+#  description      = "Test-Node"
+#  rate_limit       = "disabled"
+#  fqdn {
+#    address_family = "ipv4"
+#    interval       = "3000"
+#  }
+#}
 #
 #resource "bigip_ltm_pool" "pool" {
 #  name                   = "/Common/APP1_Pool"
