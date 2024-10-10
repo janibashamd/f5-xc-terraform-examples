@@ -1,7 +1,7 @@
 provider "bigip" {
-    address = "${local.bigip_ip}"
+    address = local.bigip_ip
     username = "admin"
-    password = "${local.bigip_password}"
+    password = local.bigip_password
 }
 
 resource "bigip_ltm_monitor" "monitor" {
