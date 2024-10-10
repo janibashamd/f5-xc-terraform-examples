@@ -1,40 +1,45 @@
 provider "bigip" {
-    address  = local.bigip_ip
-    username = "admin"
-    password = local.bigip_password
-    port     = "8443"
+    address               = local.bigip_ip
+    username              = "admin"
+    password              = local.bigip_password
+    port                  = "8443"
 }
 
 resource "bigip_ltm_monitor" "monitor" {
-  name   = "/Common/terraform_monitor"
-  parent = "/Common/http"
+  name                    = "/Common/terraform_monitor"
+  parent                  = "/Common/http"
 }
 
 resource "bigip_ltm_node" "node" {
-  name             = "/Common/terraform_node1"
-  address          = "${local.app_ip}"
-  connection_limit = "0"
-  dynamic_ratio    = "1"
-  monitor          = "/Common/icmp"
-  description      = "Test-Node"
-  rate_limit       = "disabled"
+  name                    = "/Common/terraform_node1"
+  address                 = local.app_ip
+  connection_limit        = "0"
+  dynamic_ratio           = "1"
+  monitor                 = "/Common/icmp"
+  description             = "Terraform-Node"
+  rate_limit              = "disabled"
   fqdn {
-    address_family = "ipv4"
-    interval       = "3000"
+    address_family        = "ipv4"
+    interval              = "3000"
   }
 }
 
 resource "bigip_ltm_pool" "pool" {
-  name                   = "/Common/APP1_Pool"
-  load_balancing_mode    = "round-robin"
-  minimum_active_members = 1
-  monitors               = [bigip_ltm_monitor.monitor.name]
+  name                      = "/Common/terraform_Pool"
+  load_balancing_mode       = "round-robin"
+  minimum_active_members    = 1
+  monitors                  = [bigip_ltm_monitor.monitor.name]
+}
+
+resource "bigip_ltm_pool_attachment" "attach_node" {
+  pool                      = bigip_ltm_pool.pool.name
+  node                      = "${bigip_ltm_node.node.name}:80"
 }
 
 resource "bigip_ltm_virtual_server" "http" {
-  name                       = "/Common/terraform_vs_https"
+  name                       = "/Common/terraform_vs"
   destination                = local.bigip_private
-  description                = "VirtualServer-test"
+  description                = "VirtualServer-terraform"
   port                       = 80
   pool                       = bigip_ltm_pool.pool.name
   profiles                   = ["/Common/tcp", "/Common/http"]
