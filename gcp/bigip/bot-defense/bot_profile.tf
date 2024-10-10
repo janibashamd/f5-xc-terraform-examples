@@ -1,7 +1,7 @@
 provider "bigip" {
-    address = local.bigip_ip
+    address = "${local.bigip_ip}"
     username = "admin"
-    password = local.bigip_password
+    password = "${local.bigip_password}"
 }
 
 resource "bigip_ltm_monitor" "monitor" {
@@ -11,7 +11,7 @@ resource "bigip_ltm_monitor" "monitor" {
 
 resource "bigip_ltm_node" "node" {
   name             = "/Common/terraform_node1"
-  address          = local.app_ip
+  address          = "${local.app_ip}"
   connection_limit = "0"
   dynamic_ratio    = "1"
   monitor          = "/Common/icmp"
