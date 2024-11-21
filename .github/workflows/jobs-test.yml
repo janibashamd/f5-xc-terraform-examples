@@ -3,7 +3,7 @@ name: "F5 XC Bot Defense on RE Deploy"
 on:
   push:
     branches:
-      - main
+      - main2
     
 jobs:
   first_job:
