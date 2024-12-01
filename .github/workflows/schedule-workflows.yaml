@@ -2,8 +2,8 @@ name: "Deploy and Destroy Workflows"
 
 on:
   schedule:
-    - cron: '30 1 * * 4'
-    - cron: '0 3 * * 4'
+    - cron: '30 10 * * 0'
+    - cron: '30 11 * * 0'
   workflow_dispatch:
   
 jobs:
@@ -16,12 +16,12 @@ jobs:
 
       - name: Trigger Deploy workflow
         run: gh workflow run bot-defense-re-deploy.yaml --ref bot-defense-re
-        if: github.event.schedule == '30 1 * * 4'
+        if: github.event.schedule == '30 10 * * 0'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
 
       - name: Trigger Destroy workflow
         run: gh workflow run bot-defense-re-destroy.yaml --ref destroy-bot-defense-re
-        if: github.event.schedule == '0 3 * * 4'
+        if: github.event.schedule == '30 11 * * 0'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
