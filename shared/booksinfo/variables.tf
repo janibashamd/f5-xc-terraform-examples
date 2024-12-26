@@ -12,5 +12,5 @@ variable "ssh_key" {
 variable "aws_waf_ce" {
   description = "Infra workspace name in terraform cloud."
   type        = string
-  default     = ""
+  default     = "aws-infra"
 }
