@@ -92,7 +92,7 @@ variable "aws_secret_key" {
 variable "aws_waf_ce" {
   description = "Infra workspace name in terraform cloud."
   type        = string
-  default     = ""
+  default     = "aws-infra"
 }
 
 variable "eks_version" {
@@ -100,9 +100,3 @@ variable "eks_version" {
   type        = string
   default     = "1.29"
 }
-
-
-
-
-
-
