@@ -4,6 +4,7 @@ variable "tf_cloud_organization" {
   description = "TF cloud org (Value set in TF cloud)"
 }
 
+
 variable "ssh_key" {
   type        = string
   description = "SSH pub key, only present for warning handling with TF cloud variable set"
